@@ -13,14 +13,14 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 moveDirection;
     CharacterController characterController;
     public GameObject cameraOfThis;
-
+    public Animator animator;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
-
+    private float currentSpeed;
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class FirstPersonController : MonoBehaviour
         yMove = Input.GetAxis("Vertical");
         //jump = Input.GetButton("Jump");
 
-
+        currentSpeed = Mathf.Abs(xMove) + Mathf.Abs(yMove);
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
@@ -59,6 +59,7 @@ public class FirstPersonController : MonoBehaviour
       //  }
        
         moveDirection.y -= gravity;
+        animator.SetFloat("Speed", currentSpeed);
         characterController.Move(moveDirection*Time.deltaTime);
         //characterController.
         
@@ -70,4 +71,6 @@ public class FirstPersonController : MonoBehaviour
         
         
     }
+
+    
 }
