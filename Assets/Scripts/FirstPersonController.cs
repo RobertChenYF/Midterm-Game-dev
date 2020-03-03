@@ -42,7 +42,7 @@ public class FirstPersonController : MonoBehaviour
 
        // yaw = Mathf.Clamp(yaw, -90f, 90f);
        
-        pitch = Mathf.Clamp(pitch, -50f, 60f);
+        pitch = Mathf.Clamp(pitch, -70f, 60f);
         
 
 
