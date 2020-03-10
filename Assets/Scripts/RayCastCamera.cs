@@ -31,7 +31,7 @@ public class RayCastCamera : MonoBehaviour
 
              uiTextContent.text = objectHit.collider.gameObject.GetComponent<InteractableObjectName>().showText[objectHit.collider.gameObject.GetComponent<InteractableObjectName>().CurrentStateNumber];
              Debug.Log(objectHit.collider.gameObject.GetComponent<InteractableObjectName>().showText[0]);
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)&&objectHit.collider.gameObject.GetComponent<InteractableObjectName>().Alternative)
             {
             objectHit.collider.gameObject.GetComponent<InteractableObjectController>().ClickOn();
             }
