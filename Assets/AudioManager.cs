@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(MeshCollider))]
-public class InteractableObjectName : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    
-    public string[] showText;
-    public bool Alternative;
-    public int CurrentStateNumber;
     // Start is called before the first frame update
+    public AudioSource audioSource;
     void Start()
     {
         
     }
 
-    
-
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }

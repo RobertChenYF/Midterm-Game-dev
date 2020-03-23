@@ -17,8 +17,8 @@ public class FirstPersonController : MonoBehaviour
     public float speedH = 2.0f;
     public float speedV = 2.0f;
     private float currentSpeed;
-    private float yaw = 0.0f;
-    private float pitch = 0.0f;
+    public float yaw = 180.0f;
+    public float pitch = 0.0f;
 
     
 

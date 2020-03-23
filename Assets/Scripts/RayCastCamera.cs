@@ -18,6 +18,7 @@ public class RayCastCamera : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
         Ray myRay = new Ray(transform.position, transform.forward);
