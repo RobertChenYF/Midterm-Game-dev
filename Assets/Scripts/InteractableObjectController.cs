@@ -12,6 +12,8 @@ public class InteractableObjectController : MonoBehaviour
     private bool pressed = false;
     public string TriggerName;
     public bool switchScene = false;
+    public bool disable = false;
+    public GameObject[] disabledGameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +68,15 @@ public class InteractableObjectController : MonoBehaviour
                         lightSource.SetActive(true);
                         GetComponent<InteractableObjectName>().CurrentStateNumber = 1;
                         pressed = true;
-
+                            if (disable)
+                        {
+                            foreach (GameObject a in disabledGameObject)
+                            {
+                                a.SetActive(false);
+                            }
+                            
+                        }
+                       
                         if (animator != null)
                         {
                             animator.SetTrigger(TriggerName);

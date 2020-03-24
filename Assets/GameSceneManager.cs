@@ -32,8 +32,11 @@ public class GameSceneManager : MonoBehaviour
     public static void UnLoadScene(int a)
     {
         Player.SetActive(true);
+        FirstPersonController.yaw = -90;
         elevatorSound.Play();
         animator.speed = 1;
-        SceneManager.UnloadScene(a);
+        SceneManager.UnloadSceneAsync(a);
+
+
     }
 }

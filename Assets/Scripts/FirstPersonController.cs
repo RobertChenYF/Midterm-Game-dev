@@ -17,8 +17,11 @@ public class FirstPersonController : MonoBehaviour
     public float speedH = 2.0f;
     public float speedV = 2.0f;
     private float currentSpeed;
-    public float yaw = 180.0f;
-    public float pitch = 0.0f;
+    public float intialYaw;
+    public float intialpitch;
+    public static float yaw = 180.0f;
+    public static float pitch = 0.0f;
+    public bool AbletoMove = true;
 
     
 
@@ -27,12 +30,16 @@ public class FirstPersonController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         Cursor.visible = false;
+        yaw = intialYaw;
+        pitch = intialpitch;
     }
 
     // Update is called once per frame
     void Update()
     {
-        xMove = Input.GetAxis("Horizontal");
+        if (AbletoMove)
+        {
+xMove = Input.GetAxis("Horizontal");
         yMove = Input.GetAxis("Vertical");
         //jump = Input.GetButton("Jump");
 
@@ -46,8 +53,7 @@ public class FirstPersonController : MonoBehaviour
         
 
 
-       cameraOfThis.transform.localRotation= Quaternion.Euler(pitch,0,0);
-        transform.eulerAngles = new Vector3(0, yaw, 0.0f);
+      
         moveDirection = yMove * transform.forward + xMove * transform.right;
         moveDirection *= speed;
         
@@ -61,6 +67,9 @@ public class FirstPersonController : MonoBehaviour
         moveDirection.y -= gravity;
         animator.SetFloat("Speed", currentSpeed);
         characterController.Move(moveDirection*Time.deltaTime);
+        }
+         cameraOfThis.transform.localRotation= Quaternion.Euler(pitch,0,0);
+        transform.eulerAngles = new Vector3(0, yaw, 0.0f);
         //characterController.
         
     }

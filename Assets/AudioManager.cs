@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public AudioSource audioSource;
+    public AudioSource Player;
     void Start()
     {
         
@@ -21,5 +22,10 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    public void PlayerPlaySound()
+    {
+        Player.Play();
     }
 }
