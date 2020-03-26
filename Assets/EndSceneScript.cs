@@ -19,6 +19,7 @@ public class EndSceneScript : MonoBehaviour
     private Vector3 playerPosition;
     private float journeyLength;
     private float target;
+    public GameObject quitText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,14 @@ public class EndSceneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (quitText.activeSelf == true)
+        {
+            if (Input.anyKeyDown)
+            {
+                Application.Quit();
+            }
+        }
 
 
         if (rotate)
@@ -80,6 +89,7 @@ public class EndSceneScript : MonoBehaviour
     {
 
         text.enabled = true;
+        quitText.SetActive(true);
     }
 
     public void DisableDot()

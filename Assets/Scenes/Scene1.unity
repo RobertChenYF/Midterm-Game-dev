@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91755fb2b5694684cb8841246052b952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castingDistance: 2
+  castingDistance: 2.5
   uiText: {fileID: 800559790}
   uiTextContent: {fileID: 2011933650}
 --- !u!1 &648715234
